@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/default-layout}" layout:fragment="section">
+<link rel="stylesheet" th:href="@{/css/plugin/login.css}">
 <section>
-<h1>로그인</h1>
+<form id="login-form">
+	<input type="text" id="id" name="id" placeholder="아이디">
+	<input type="password" id="pw" name="pw" placeholder="패스워드">
+	<button>로그인</button>
+</form>
 </section>
+<script>
+$('button').click(function() {
+	$('#login-form').attr('method', 'POST');
+	$('#login-form').submit();
+});
+</script>
 </html>

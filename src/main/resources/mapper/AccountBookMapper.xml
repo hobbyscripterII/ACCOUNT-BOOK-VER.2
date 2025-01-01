@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.project.accountbook.account_book.AccountBookMapper">
+	<select id="getAccountBook" parameterType="AccountBookGetDto" resultType="AccountBookGetVo">
+	SELECT ACCOUNT_BOOK_CD accountBookCd FROM tbl_account_book WHERE ACCOUNT_BOOK_CD LIKE CONCAT('%', '#{userId}', '%') AND YEARS = ${years} AND USE_YN = 'Y' AND DEL_YN = 'N'
+	</select>
+</mapper>

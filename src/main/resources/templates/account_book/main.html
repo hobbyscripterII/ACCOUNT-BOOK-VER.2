@@ -1,6 +1,62 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{fragments/default-layout}" layout:fragment="section">
+<style>
+	section {height: auto;}
+	#account-book-create-modal .modal-body {
+		display: flex; justify-content: center;
+	}
+	#account-book-create-modal .input-group {
+		width: 15%;
+	}
+	#account-book-create-btn {
+		cursor: pointer;
+	}
+	#account-book-btn-grp {
+		width: 100%;
+		background-color: lightgray;
+		padding: 8px 5px;
+	}
+</style>
 <section>
 <h1>월별 가계부</h1>
+<div id="account-book-btn-grp">
+	<svg data-bs-toggle="modal" href="#account-book-create-modal" id="account-book-create-btn" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewbox="0 0 16 16" onclick="accountBookCreate()">
+	<path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0"/>
+	</svg>
+	<button type="button" class="btn btn-secondary btn-sm">Small button</button>
+</div>
 </section>
+<div class="modal" id="account-book-create-modal">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">가계부 생성</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="input-group mb-1">
+					<span class="input-group-text">20</span>
+					<input type="text" class="form-control" data-valid-number="2">
+					<span class="input-group-text">년</span>
+				</div>
+				
+				<div class="input-group mb-1">
+					<span class="input-group-text" style="color: #FFF">00</span>
+					<input type="text" class="form-control" data-valid-number="2">
+					<span class="input-group-text">월</span>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary">저장</button>
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+function accountBookCreate() {
+}
+</script>
 </html>
